@@ -1,24 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { useEffect } from 'react';
+import { Text, View, NativeModules} from 'react-native'
+import { modules, NativeModuleEx} from 'rn-fingerprint-generator'
+const App = () => {
 
-import React, {Component} from 'react';
-import { Provider as PaperProvider } from 'react-native-paper';
-import { createAppContainer } from 'react-navigation';
-import RootNavigator from './src/root-navigator';
+  useEffect(() => {
+    console.log('lib', modules);
+    console.log('app', NativeModuleEx);
+  }, [])
 
-const Root = createAppContainer(RootNavigator);
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>
+        Token:
+      </Text>
 
-export default class App extends Component {
-  render() {
-    return (
-      <PaperProvider>
-        <Root />
-      </PaperProvider>
-    );
-  }
+    </View>
+  );
 }
+
+export default App;

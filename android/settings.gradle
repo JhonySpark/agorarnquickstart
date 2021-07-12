@@ -1,3 +1,5 @@
 rootProject.name = 'agorarnquickstart'
+include ':rn-fingerprint-generator'
+project(':rn-fingerprint-generator').projectDir = new File(rootProject.projectDir, '../node_modules/rn-fingerprint-generator/android')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
